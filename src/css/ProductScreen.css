@@ -1,0 +1,22 @@
+.ProductScreen h2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--background);
+  text-align: center;
+}
+.ProductScreen button {
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--main-theme);
+  color: white;
+  border: none;
+}
+.ProductScreen button:hover {
+  transform: scale(1.05);
+  transition: all ease-out 0.5s;
+}
