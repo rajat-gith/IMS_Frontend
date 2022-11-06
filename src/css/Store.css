@@ -40,3 +40,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
+.store_details{
+  display: flex;
+  margin: 10px;
+}

@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Stores from "../components/Stores";
+import {useDispatch,useSelector} from 'react-redux'
+import { listStores } from "../actions/storeActions";
+
 
 function StoreScreen() {
-  const [buttonDesc, setButtonDesc] = useState(false);
 
-  const [stores, setStore] = useState(null);
+  const dispatch=useDispatch();
+
+  const storeList=useSelector((state)=>state.storeList)
+  const [buttonDesc, setButtonDesc] = useState(false);
+  const {error,loading,stores}=storeList;
+
   useEffect(() => {
-    fetch("http://localhost:8000/api/stores/")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setStore(data);
-        console.log(stores);
-      });
+    console.log(stores['brands'])
+    dispatch(listStores())
   }, []);
   return (
     <div className="StoreScreen">
