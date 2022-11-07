@@ -1,3 +1,10 @@
+.store_preview {
+  margin: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background: gray;
+  padding-top: 5px;
+}
 .product_preview {
   display: flex;
   flex-direction: column;
@@ -40,7 +47,26 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.store_details{
+
+.brand_details {
   display: flex;
-  margin: 10px;
+  flex-direction: column;
+  margin-left: 10px;
+  
+}
+.store_details {
+  display: flex;
+  margin: 5px;
+  background: white;
+  padding: 5px;
+}
+.store_details h4 {
+  display: flex;
+  margin-right: 5px;
+  align-items: center;
+}
+.owner_details{
+  margin-top: 2px;
+  display: flex;
+  
 }

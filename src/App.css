@@ -5,9 +5,9 @@
     padding: 0;
 }
 :root{
-    --main-theme:#6C0BA9;
+    --main-theme:#2f2c30;
     --product-card:#ffffff;
-    --background:#D7A1F9;
+    --background:#8a8a8a;
 }
 .app{
     width: 100%;

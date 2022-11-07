@@ -30,9 +30,7 @@ function ProductScreen() {
       </button>
       {/* <h5>Click to Show Details of the Product</h5> */}
       <button onClick={() => setButtonDesc(false)}>Collapse</button>
-      <div className="product_list">
-        {products && <Product products={products} triggerValue={buttonDesc} />}
-      </div>
+      {products && <Product products={products} triggerValue={buttonDesc} />}
     </div>
   );
 }
