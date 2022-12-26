@@ -1,4 +1,4 @@
-.HomeScreen {
+/* .HomeScreen {
   display: flex;
   width: 100%;
   overflow-x: hidden;
@@ -44,18 +44,21 @@
 .card_row_1:hover {
   transition: all 0.5s ease-out;
   transform: scale(1.05);
+} */
+
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
 }
-@media only screen and (max-width: 488px) {
-  .row_1,
-  .row_2 {
-    flex-direction: column;
-  }
-  .card_row_2 img,
-  .card_row_1 img {
-    width: 200px;
-    object-fit: contain;
-  }
+
+.grid img {
+  width: 20rem;
 }
-@media only screen and (min-width: 488px) and (max-width: 768px) {
-    
-  }
+
+.grid h2 {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+}

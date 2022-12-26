@@ -3,6 +3,7 @@ import Product from "../components/Products";
 import { useDispatch, useSelector } from "react-redux";
 import "../css/ProductScreen.css";
 import { listProducts } from "../actions/productActions";
+import { Link } from "react-router-dom";
 
 function ProductScreen() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function ProductScreen() {
     //     console.log(data);
     //     setProducts(data);
     //   });
+    console.log(products)
     dispatch(listProducts());
   }, []);
 
@@ -28,6 +30,9 @@ function ProductScreen() {
       <button onClick={() => setButtonDesc(true)}>
         Click to Show Product Description
       </button>
+      <Link to="/home/products/add">
+        <button>Add Product</button>
+      </Link>
       {/* <h5>Click to Show Details of the Product</h5> */}
       <button onClick={() => setButtonDesc(false)}>Collapse</button>
       {products && <Product products={products} triggerValue={buttonDesc} />}

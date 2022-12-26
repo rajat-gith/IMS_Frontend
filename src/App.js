@@ -7,6 +7,7 @@ import ProductScreen from "./screens/ProductScreen";
 import SalesScreen from "./screens/SalesScreen";
 import StoreOwnerScreen from "./screens/StoreOwnerScreen";
 import StoreScreen from "./screens/StoreScreen";
+import ProductAddScreen from './screens/ProductAddScreen'
 import DeveloperProfileScreen from "./screens/DeveloperProfileScreen";
 import ContactUsScreen from "./screens/ContactUsScreen";
 import Nav from "./components/Nav";
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <Nav />
+        {/* <Nav /> */}
 
         <Routes>
           <Route exact path="/" element={<LoginScreen />} />
@@ -26,6 +27,7 @@ function App() {
           <Route path="/home/storeOwner" element={<StoreOwnerScreen />} />
           <Route path="/home/store" element={<StoreScreen />} />
           <Route path="/home/contactus" element={<ContactUsScreen />} />
+          <Route path="/home/products/add" element={<ProductAddScreen />} />
           <Route
             path="/home/developerprofile"
             element={<DeveloperProfileScreen />}
