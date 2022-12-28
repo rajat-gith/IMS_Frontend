@@ -7,7 +7,6 @@ import ProductScreen from "./screens/ProductScreen";
 import SalesScreen from "./screens/SalesScreen";
 import StoreOwnerScreen from "./screens/StoreOwnerScreen";
 import StoreScreen from "./screens/StoreScreen";
-import ProductAddScreen from './screens/ProductAddScreen'
 import DeveloperProfileScreen from "./screens/DeveloperProfileScreen";
 import ContactUsScreen from "./screens/ContactUsScreen";
 import Nav from "./components/Nav";
@@ -22,12 +21,11 @@ function App() {
           <Route exact path="/" element={<LoginScreen />} />
           <Route path="/signup" element={<RegisterScreen />} />
           <Route path="/home" element={<HomeScreen />} />
-          <Route path="/home/products" element={<ProductScreen />} />
+          <Route path="/home/products/" element={<ProductScreen />} />
           <Route path="/home/sales" element={<SalesScreen />} />
           <Route path="/home/storeOwner" element={<StoreOwnerScreen />} />
           <Route path="/home/store" element={<StoreScreen />} />
           <Route path="/home/contactus" element={<ContactUsScreen />} />
-          <Route path="/home/products/add" element={<ProductAddScreen />} />
           <Route
             path="/home/developerprofile"
             element={<DeveloperProfileScreen />}

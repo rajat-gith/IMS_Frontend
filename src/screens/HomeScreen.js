@@ -18,18 +18,15 @@ function HomeScreen() {
   // },[])
 
   return (
-    <Grid item className="HomeScreen" lg={12} container spacing={2}>
+    <Grid item className="HomeScreen" lg={12} container spacing={1}>
       <Grid
         className="grid"
-        onClick={() => {
-          alert("Clicked");
-        }}
         item
         lg={4}
         xs={12}
         md={6}
       >
-        <Link to="/home/products">
+        <Link to="/home/products/">
           <Card>
             <h2>Products</h2>
             <img

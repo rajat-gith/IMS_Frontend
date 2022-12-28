@@ -4,7 +4,10 @@ import {
   composeWithDevTools,
   createwithDevTools,
 } from "redux-devtools-extension";
-import { productListReducers } from "./reducers/productReducers";
+import {
+  productListReducers,
+  productCreateReducer,
+} from "./reducers/productReducers";
 import { storeListReducers } from "./reducers/storeReducers";
 import {
   userLoginReducers,
@@ -19,6 +22,7 @@ const reducer = combineReducers({
   userLogin: userLoginReducers,
   userRegister: userRegisterReducers,
   userUpdateProfile: userUpdateProfileReducers,
+  productCreate:productCreateReducer
 });
 const initialState = {};
 
