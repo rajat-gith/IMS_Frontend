@@ -50,13 +50,20 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 5px;
+  margin:5px;
 }
 
-.grid img {
-  width: 20rem;
+.img_1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
+.img_1 img{
+  width: 15rem;
+}
+.grid h2{
+  text-decoration: none;
+}
 .grid h2 {
   display: flex;
   padding-top: 10px;

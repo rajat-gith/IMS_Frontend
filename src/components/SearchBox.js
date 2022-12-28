@@ -32,7 +32,7 @@ function SearchBox() {
           ></Form.Control>
         </div>
       </Form.Group>
-      <Button className="mt-3" type="submit" variant="primary">
+      <Button className="searchButton" type="submit" variant="primary">
         Search
       </Button>
     </Form>

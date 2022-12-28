@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import DoneIcon from "@mui/icons-material/Done";
+import ClearIcon from "@mui/icons-material/Clear";
 import {
   Card,
   Box,
@@ -40,14 +41,18 @@ const Product = ({ product }) => {
 
   return (
     <div className="product_list">
-      <Container className="product_preview" key={product._id}>
+      <div className="product_preview" key={product._id}>
         <Card className="product_details">
           <h4>{product._id}</h4>
           <h4>{product.product_name}</h4>
           {product.quantity > 0 ? (
-            <div className="A">In Stock</div>
+            <div className="A">
+              <DoneIcon sx={{ px: 2 }}></DoneIcon>
+            </div>
           ) : (
-            <div className="NA">Out Of Stock</div>
+            <div className="NA">
+              <ClearIcon sx={{ px: 2 }}></ClearIcon>
+            </div>
           )}
           <button onClick={handleOpen}>More Info</button>
           <Modal
@@ -88,7 +93,7 @@ const Product = ({ product }) => {
             </Box>
           </Modal>
         </Card>
-      </Container>
+      </div>
     </div>
   );
 };

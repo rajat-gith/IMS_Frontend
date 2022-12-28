@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 * {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -40,6 +40,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
 .searchform {
     margin-left: 10px;
     margin-right: 10px;
@@ -50,13 +51,73 @@
     width: 30%;
 }
 
+.LoginScreen {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    background: #2f2c30;
+    height: 50%;
+    width: 30%;
+    justify-content: center;
+}
+
+.form_container label {
+    display: flex;
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+    width: 100%;
+
+    justify-content: center;
+}
+
+.vicon {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.form_container Input {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 90%;
+    background: #8a8a8a;
+    margin: 5px;
+    flex-grow: 1;
+}
+
+.emailInput,
+.passwordInput {
+    display: flex;
+    justify-content: center;
+}
+
+.form_container button {
+    color: white;
+    width: 100%;
+    display: flex;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 576px) {
     .searchform {
         margin-left: 10px;
         margin-right: 10px;
     }
+
     .searchform>input {
         margin-right: 10px;
+        width: 80%;
+    }
+
+    .form_container {
+        height: 50%;
         width: 80%;
     }
 

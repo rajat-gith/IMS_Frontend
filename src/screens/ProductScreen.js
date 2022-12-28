@@ -96,7 +96,7 @@ function ProductScreen() {
   return (
     <div className="ProductScreen">
       <h2>Products Panel</h2>
-      <button onClick={handleOpen}>Add Product</button>
+      <button className="addButton" onClick={handleOpen}>Add Product</button>
       {/* <h5>Click to Show Details of the Product</h5> */}
       <SearchBox></SearchBox>
       <Modal
@@ -187,7 +187,7 @@ function ProductScreen() {
                 </div>
               </Form.Group>
               <Button className="mt-3" type="submit" variant="primary">
-                Register
+                Add
               </Button>
             </Form>
           </Container>
