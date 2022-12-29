@@ -48,11 +48,13 @@ function ProductScreen() {
   const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const navigate = useNavigate();
   const search = useLocation();
   const keyword = search.search;
-  console.log(search.search)
+  console.log(search.search);
 
   const productList = useSelector((state) => state.productList);
   const { error, loading, products } = productList;
@@ -70,7 +72,11 @@ function ProductScreen() {
 
   useEffect(() => {
     console.log(products);
-    dispatch(listProducts(keyword));
+    if (userInfo) {
+      dispatch(listProducts(keyword));
+    } else {
+      alert("Not Logged IN")
+    }
     if (products) {
       handleClick();
     }
@@ -96,7 +102,9 @@ function ProductScreen() {
   return (
     <div className="ProductScreen">
       <h2>Products Panel</h2>
-      <button className="addButton" onClick={handleOpen}>Add Product</button>
+      <button className="addButton" onClick={handleOpen}>
+        Add Product
+      </button>
       {/* <h5>Click to Show Details of the Product</h5> */}
       <SearchBox></SearchBox>
       <Modal

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Form } from "react-bootstrap";
-import { Button, Input, InputAdornment } from "@mui/material";
+import { Button, Input, InputAdornment, Typography } from "@mui/material";
 import { login } from "../actions/userActions";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import EmailIcon from '@mui/icons-material/Email';
+import EmailIcon from "@mui/icons-material/Email";
 
 function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -14,14 +14,11 @@ function LoginScreen() {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { error, loading, userInfo } = userLogin;
-
+  const [open, setOpen] = useState(false);
   let navigate = useNavigate();
   useEffect(() => {
     if (userInfo) {
-      navigate("/home/products/");
-    }
-    else{
-      alert("Invalid Credentials")
+      navigate("/home/");
     }
   }, [userInfo]);
 
@@ -31,6 +28,7 @@ function LoginScreen() {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
+    setOpen(true);
   };
 
   return (
@@ -60,11 +58,9 @@ function LoginScreen() {
             startAdornment={
               <InputAdornment position="end">
                 <VisibilityIcon
-                  sx={
-                    {
-                      cursor:"pointer"
-                    }
-                  }
+                  sx={{
+                    cursor: "pointer",
+                  }}
                   className="vicon"
                   onClick={togglePassword}
                 ></VisibilityIcon>
@@ -76,6 +72,12 @@ function LoginScreen() {
             onChange={(e) => setPassword(e.target.value)}
           ></Input>
         </Form.Group>
+        <Typography
+          sx={{ visibility: open == false ? "hidden" : "visible" }}
+          className="check_text"
+        >
+          Invalid Credentials
+        </Typography>
         <Button className="mt-3" type="submit" variant="primary">
           Login
         </Button>

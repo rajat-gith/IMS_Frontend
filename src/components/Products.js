@@ -42,7 +42,7 @@ const Product = ({ product }) => {
   return (
     <div className="product_list">
       <div className="product_preview" key={product._id}>
-        <Card className="product_details">
+        <Paper elevation={3} className="product_details">
           <h4>{product._id}</h4>
           <h4>{product.product_name}</h4>
           {product.quantity > 0 ? (
@@ -92,7 +92,7 @@ const Product = ({ product }) => {
               <Button onClick={handleClose}>Close</Button>
             </Box>
           </Modal>
-        </Card>
+        </Paper>
       </div>
     </div>
   );

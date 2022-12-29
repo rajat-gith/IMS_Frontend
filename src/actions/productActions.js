@@ -15,7 +15,7 @@ export const listProducts =
       dispatch({ type: PRODUCT_LIST_REQUEST });
 
       const { data } = await axios.get(
-        `http://localhost:8000/api/products/${keyword}`
+        `/api/products/${keyword}`
       );
 
       dispatch({
@@ -42,7 +42,7 @@ export const createProduct =
       });
 
       const { data } = await axios.post(
-        `http://localhost:8000/api/products/add/`,
+        `/api/products/add/`,
         {
           color: color,
           category: category,

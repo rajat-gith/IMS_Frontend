@@ -8,7 +8,10 @@ import {
   productListReducers,
   productCreateReducer,
 } from "./reducers/productReducers";
-import { storeListReducers } from "./reducers/storeReducers";
+import {
+  storeListReducers,
+  storeOwnerListReducers,
+} from "./reducers/storeReducers";
 import {
   userLoginReducers,
   userRegisterReducers,
@@ -22,9 +25,16 @@ const reducer = combineReducers({
   userLogin: userLoginReducers,
   userRegister: userRegisterReducers,
   userUpdateProfile: userUpdateProfileReducers,
-  productCreate:productCreateReducer
+  productCreate: productCreateReducer,
+  storeOwnerList: storeOwnerListReducers,
 });
-const initialState = {};
+const userInfoFromStorage = localStorage.getItem("userInfo")
+  ? JSON.parse(localStorage.getItem("userInfo"))
+  : null;
+
+const initialState = {
+  userLogin: { userInfo: userInfoFromStorage },
+};
 
 const middleware = [thunk];
 const store = createStore(

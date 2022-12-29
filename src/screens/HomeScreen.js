@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "../css/HomeScreen.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, Grid } from "@mui/material";
+import { useSelector } from "react-redux";
 
 function HomeScreen() {
   const [products, setProducts] = useState(null);
-
-  // useEffect(()=>{
-  //   fetch('http://localhost:8000/api/products/')
-  //   .then(res =>{
-  //     return res.json();
-  //   })
-  //   .then((data)=>{
-  //       console.log(data)
-  //       setProducts(data)
-  //   })
-  // },[])
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!userInfo) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <Grid item className="HomeScreen" lg={12} container spacing={1}>

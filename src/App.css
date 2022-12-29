@@ -15,7 +15,12 @@
 .app {
     width: 100%;
 }
-
+.check_text{
+    display: flex;
+    justify-content: center;
+    color: #f6070f;
+    visibility: hidden;
+}
 .group {
     display: flex;
     flex-direction: column;
@@ -103,6 +108,11 @@
     color: white;
     width: 100%;
     display: flex;
+}
+
+.StoreOwnerScreen>h3 {
+    text-align: center;
+    margin: 10px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 576px) {
