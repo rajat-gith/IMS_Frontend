@@ -23,19 +23,19 @@ import {
   TableCell,
   Modal,
   Container,
+  Input,
+  TextField,
 } from "@mui/material";
 import SearchBox from "../components/SearchBox";
 
 const style = {
   position: "absolute",
-
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   bgcolor: "background.paper",
-  border: "2px solid #000",
   boxShadow: 24,
-  padding: 4,
+  paddingTop:1
 };
 
 function ProductScreen() {
@@ -75,12 +75,12 @@ function ProductScreen() {
     if (userInfo) {
       dispatch(listProducts(keyword));
     } else {
-      alert("Not Logged IN")
+      alert("Not Logged IN");
     }
     if (products) {
       handleClick();
     }
-  }, []);
+  }, [dispatch]);
   console.log(products);
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -113,99 +113,116 @@ function ProductScreen() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={{ ...style, width: 200 }}>
-          <h2 id="modal-modal-title">Product</h2>
+        <Paper
+          variant="outlined"
+          sx={{ ...style, width: { xl: 500, xs: 230, sm: 400 } }}
+        >
           <Container id="modal-modal-description" component={Paper}>
             <Form className="addform" onSubmit={submitHandler}>
               <Form.Group controlId="name">
                 <div className="group">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control
+                  <TextField
                     type="text"
+                    id="outlined-basic"
+                    label="Name"
+                    variant="outlined"
                     placeholder="Enter Product Name"
                     value={product_name}
                     onChange={(e) => setName(e.target.value)}
-                  ></Form.Control>
+                  ></TextField>
                 </div>
               </Form.Group>
               <Form.Group controlId="brand">
                 <div className="group">
-                  <Form.Label>Brand</Form.Label>
-                  <Form.Control
+                  <TextField
                     type="text"
+                    id="outlined-basic"
+                    label="Brand"
+                    variant="outlined"
                     placeholder="Enter Product Brand."
                     value={brand}
                     onChange={(e) => setBrand(e.target.value)}
-                  ></Form.Control>
+                  ></TextField>
                 </div>
               </Form.Group>
               <Form.Group controlId="quantity">
                 <div className="group">
-                  <Form.Label>Quantity</Form.Label>
-                  <Form.Control
+                  <TextField
                     type="text"
+                    id="outlined-basic"
+                    label="Quantity"
+                    variant="outlined"
                     placeholder="Enter Product Quantity"
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
-                  ></Form.Control>
+                  ></TextField>
                 </div>
               </Form.Group>
               <Form.Group controlId="price">
                 <div className="group">
-                  <Form.Label>Price</Form.Label>
-                  <Form.Control
+                  <TextField
                     type="text"
+                    id="outlined-basic"
+                    label="Price"
+                    variant="outlined"
                     placeholder="Enter Product Price"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                  ></Form.Control>
+                  ></TextField>
                 </div>
               </Form.Group>
               <Form.Group controlId="colour">
                 <div className="group">
-                  <Form.Label>Colour</Form.Label>
-                  <Form.Control
+                  <TextField
                     type="text"
+                    id="outlined-basic"
+                    label="Colour"
+                    variant="outlined"
                     placeholder="Enter Product Colour"
                     value={colour}
                     onChange={(e) => setColour(e.target.value)}
-                  ></Form.Control>
+                  ></TextField>
                 </div>
               </Form.Group>
               <Form.Group controlId="cat">
                 <div className="group">
-                  <Form.Label>Category</Form.Label>
-                  <Form.Control
+                  <TextField
                     type="text"
+                    id="outlined-basic"
+                    label="Category"
+                    variant="outlined"
                     placeholder="Enter Product Cat"
                     value={cat}
                     onChange={(e) => setCat(e.target.value)}
-                  ></Form.Control>
+                  ></TextField>
                 </div>
               </Form.Group>
               <Form.Group controlId="desc">
                 <div className="group">
-                  <Form.Label>Description</Form.Label>
-                  <Form.Control
+                  <TextField
                     type="text"
+                    id="outlined-basic"
+                    label="Description"
+                    variant="outlined"
                     placeholder="Enter Product Desc"
                     value={desc}
                     onChange={(e) => setDesc(e.target.value)}
-                  ></Form.Control>
+                  ></TextField>
                 </div>
               </Form.Group>
-              <Button className="mt-3" type="submit" variant="primary">
+              <Button type="submit" variant="primary">
                 Add
               </Button>
             </Form>
+            <Button onClick={handleClose}>Close</Button>
           </Container>
-          <Button onClick={handleClose}>Close</Button>
-        </Box>
+        </Paper>
       </Modal>
-      {products &&
-        products.map((product) => (
-          <Product product={product} triggerValue={buttonDesc} />
-        ))}
+      {products && Array.isArray(products)
+        ? products.map((product) => (
+            <Product product={product} triggerValue={buttonDesc} />
+          ))
+        : null}
     </div>
   );
 }

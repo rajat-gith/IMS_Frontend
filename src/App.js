@@ -10,6 +10,8 @@ import StoreScreen from "./screens/StoreScreen";
 import DeveloperProfileScreen from "./screens/DeveloperProfileScreen";
 import ContactUsScreen from "./screens/ContactUsScreen";
 import Nav from "./components/Nav";
+import OwnerStoreScreen from "./screens/OwnerStoreScreen";
+import StoreBrandsScreen from "./screens/StoreBrandsScreen";
 
 function App() {
   return (
@@ -24,8 +26,10 @@ function App() {
           <Route path="/home/products/" element={<ProductScreen />} />
           <Route path="/home/sales" element={<SalesScreen />} />
           <Route path="/home/storeOwner" element={<StoreOwnerScreen />} />
+          <Route path="/home/storeOwner/:id" element={<OwnerStoreScreen />} />
           <Route path="/home/store" element={<StoreScreen />} />
           <Route path="/home/contactus" element={<ContactUsScreen />} />
+          <Route path="/home/store/:id" element={<StoreBrandsScreen />} />
           <Route
             path="/home/developerprofile"
             element={<DeveloperProfileScreen />}

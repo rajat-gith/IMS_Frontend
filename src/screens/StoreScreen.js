@@ -15,7 +15,7 @@ function StoreScreen() {
   const navigate = useNavigate();
   const search = useLocation();
   const keyword = search.search;
-  console.log(search.search);
+  // console.log(search.search);
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -27,8 +27,13 @@ function StoreScreen() {
     <div className="StoreScreen">
       <h3>Store Details</h3>
       <SearchBox />
-
-      {stores && <Stores stores={stores} triggerValue={buttonDesc} />}
+      {stores && Array.isArray(stores)
+        ? stores.map((store) => (
+            <div key={store._id}>
+              <Stores store={store} triggerValue={buttonDesc} />
+            </div>
+          ))
+        : null}
     </div>
   );
 }

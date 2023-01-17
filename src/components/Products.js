@@ -13,6 +13,8 @@ import {
   TableCell,
   Modal,
   Container,
+  Grid,
+  Typography,
 } from "@mui/material";
 
 const style = {
@@ -41,20 +43,27 @@ const Product = ({ product }) => {
 
   return (
     <div className="product_list">
-      <div className="product_preview" key={product._id}>
-        <Paper elevation={3} className="product_details">
-          <h4>{product._id}</h4>
-          <h4>{product.product_name}</h4>
-          {product.quantity > 0 ? (
-            <div className="A">
-              <DoneIcon sx={{ px: 2 }}></DoneIcon>
-            </div>
-          ) : (
-            <div className="NA">
-              <ClearIcon sx={{ px: 2 }}></ClearIcon>
-            </div>
-          )}
-          <button onClick={handleOpen}>More Info</button>
+      <div className="product_box" key={product._id}>
+        <Paper
+          variant="outlined"
+          sx={{ p: 2, m: 1 }}
+          elevation={3}
+          className="product_details"
+        >
+          <Grid item className="ProductComponent" lg={12} container spacing={1}>
+            <Grid className="grid" item sm={12} md={6} lg={4} xl={3} xs={12}>
+              <Typography>{product._id}</Typography>
+            </Grid>
+            <Grid className="grid" item sm={12} md={6} lg={4} xl={3} xs={12}>
+              <Typography>Name: {product.product_name}</Typography>
+            </Grid>
+            <Grid className="grid" item sm={12} md={6} lg={4} xl={3} xs={12}>
+              <Typography>Category: {product.category}</Typography>
+            </Grid>
+            <Grid className="grid" item sm={12} md={6} lg={4} xl={3} xs={12}>
+              <button onClick={handleOpen}>More Info</button>
+            </Grid>
+          </Grid>
           <Modal
             open={open}
             onClose={handleClose}
@@ -72,7 +81,7 @@ const Product = ({ product }) => {
                     </TableRow>
                     <TableRow>
                       <TableCell>Product Brand</TableCell>
-                      <TableCell>{product.brand["name"]}</TableCell>
+                      <TableCell> {product.brand["name"]}</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>Quantity</TableCell>

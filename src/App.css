@@ -4,6 +4,7 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 :root {
@@ -15,12 +16,14 @@
 .app {
     width: 100%;
 }
-.check_text{
+
+.check_text {
     display: flex;
     justify-content: center;
     color: #f6070f;
     visibility: hidden;
 }
+
 .group {
     display: flex;
     flex-direction: column;
@@ -111,6 +114,21 @@
 }
 
 .StoreOwnerScreen>h3 {
+    text-align: center;
+    margin: 10px;
+}
+
+.OwnerStoreScreen>h5 {
+    text-align: center;
+    margin: 10px;
+}
+
+.StoreDetails h3 {
+    text-align: center;
+    margin: 10px;
+}
+
+.SalesScreen h3 {
     text-align: center;
     margin: 10px;
 }

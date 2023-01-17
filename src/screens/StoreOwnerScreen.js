@@ -12,6 +12,7 @@ function StoreOwnerScreen() {
   const { storeOwners } = storeOwnerList;
 
   useEffect(() => {
+    console.log(typeof(storeOwners))
     if (userInfo) {
       dispatch(listStoreOwners());
     } else {
@@ -24,7 +25,13 @@ function StoreOwnerScreen() {
     <div className="StoreOwnerScreen">
       <h3>Owner Details</h3>
       <SearchBox />
-      {storeOwners && <StoreOwner Owners={storeOwners} />}
+      {storeOwners && Array.isArray(storeOwners)
+        ? storeOwners.map((owner) => (
+            <div key={owner._id}>
+              <StoreOwner owner={owner} />
+            </div>
+          ))
+        : null}
     </div>
   );
 }

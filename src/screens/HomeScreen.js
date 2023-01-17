@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../css/HomeScreen.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Card, Grid } from "@mui/material";
+import { Card, Grid,Paper } from "@mui/material";
 import { useSelector } from "react-redux";
+
 
 function HomeScreen() {
   const [products, setProducts] = useState(null);
@@ -17,7 +18,9 @@ function HomeScreen() {
 
   return (
     <Grid item className="HomeScreen" lg={12} container spacing={1}>
-      <Grid className="grid" item sm={12} md={6} lg={4} xl={3} xs={12}>
+      {/* <Nav /> */}
+      <Paper></Paper>
+      <Grid   className="grid" item sm={12} md={6} lg={4} xl={3} xs={12}>
         <Link to="/home/products/">
           <Card>
             <h2>Products</h2>
