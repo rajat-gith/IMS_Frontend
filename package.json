@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "https://ims-vssut.netlify.app/",
+  "proxy": "https://rajatdev.pythonanywhere.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
