@@ -61,7 +61,7 @@ const Product = ({ product }) => {
               <Typography>Category: {product.category}</Typography>
             </Grid>
             <Grid className="grid" item sm={12} md={6} lg={4} xl={3} xs={12}>
-              <button onClick={handleOpen}>More Info</button>
+              <Button onClick={handleOpen}>More Info</Button>
             </Grid>
           </Grid>
           <Modal

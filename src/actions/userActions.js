@@ -30,7 +30,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:8000/api/users/login/",
+      "https://rajatdev.pythonanywhere.com/api/users/login/",
       { username: email, password: password },
       config
     );
@@ -69,7 +69,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:8000/api/users/register/",
+      "https://rajatdev.pythonanywhere.com/api/users/register/",
       { name: name, email: email, password: password },
       config
     );

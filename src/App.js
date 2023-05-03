@@ -18,7 +18,6 @@ function App() {
     <div className="app">
       <Router>
         <Nav />
-
         <Routes>
           <Route exact path="/" element={<LoginScreen />} />
           <Route path="/signup" element={<RegisterScreen />} />

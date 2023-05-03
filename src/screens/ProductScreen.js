@@ -35,7 +35,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   bgcolor: "background.paper",
   boxShadow: 24,
-  paddingTop:1
+  paddingTop: 1,
 };
 
 function ProductScreen() {

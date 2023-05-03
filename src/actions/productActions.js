@@ -15,7 +15,7 @@ export const listProducts =
       dispatch({ type: PRODUCT_LIST_REQUEST });
 
       const { data } = await axios.get(
-        `/api/products/${keyword}`
+        `https://rajatdev.pythonanywhere.com/api/products/${keyword}`
       );
 
       dispatch({
@@ -42,7 +42,7 @@ export const createProduct =
       });
 
       const { data } = await axios.post(
-        `/api/products/add/`,
+        `https://rajatdev.pythonanywhere.com/api/products/add/`,
         {
           color: color,
           category: category,

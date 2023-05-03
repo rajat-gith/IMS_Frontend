@@ -11,7 +11,7 @@ import {
 export const listSales = () => async (dispatch) => {
   try {
     dispatch({ type: SALES_LIST_REQUEST });
-    const { data } = await axios.get(`/api/sales`);
+    const { data } = await axios.get(`https://rajatdev.pythonanywhere.com/api/sales`);
 
     dispatch({
       type: SALES_LIST_SUCCESS,
@@ -35,7 +35,7 @@ export const createSales =
         type: SALES_ADD_LIST_REQUEST,
       });
 
-      const { data } = await axios.post(`/api/sales/add/`, {
+      const { data } = await axios.post(`https://rajatdev.pythonanywhere.com/api/sales/add/`, {
         quantity: quantity,
         date: datetime,
         destination: destination,

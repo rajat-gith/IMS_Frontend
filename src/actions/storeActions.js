@@ -16,7 +16,7 @@ export const listStores =
   async (dispatch) => {
     try {
       dispatch({ type: STORE_LIST_REQUEST });
-      const { data } = await axios.get(`/api/stores/${keyword}`);
+      const { data } = await axios.get(`https://rajatdev.pythonanywhere.com/api/stores/${keyword}`);
       dispatch({
         type: STORE_LIST_SUCCESS,
         payload: data,
@@ -35,7 +35,7 @@ export const listStores =
 export const storeDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: STORE_DETAILS_REQUEST });
-    const { data } = await axios.get(`/api/stores/${id}`);
+    const { data } = await axios.get(`https://rajatdev.pythonanywhere.com/api/stores/${id}`);
     dispatch({
       type: STORE_DETAILS_SUCCESS,
       payload: data,
