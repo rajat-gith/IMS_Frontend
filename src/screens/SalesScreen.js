@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { listSales,createSales } from "../actions/salesActions";
+import { listSales, createSales } from "../actions/salesActions";
 import { Form } from "react-bootstrap";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import SalesComponent from "../components/SalesComponent";
@@ -39,7 +39,6 @@ function SalesScreen() {
   const [destination, setDestination] = useState("");
   const [source, setSource] = useState("");
   const [quantity, setQuantity] = useState("");
-
   const handleOpen = () => {
     setOpen(true);
   };
@@ -56,11 +55,8 @@ function SalesScreen() {
   }, []);
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(
-      createSales(date, destination, source, quantity)
-    );
+    dispatch(createSales(date, destination, source, quantity));
   };
-
   return (
     <div className="SalesScreen">
       <h3>Sales Details</h3>
@@ -130,7 +126,6 @@ function SalesScreen() {
                   ></TextField>
                 </div>
               </Form.Group>
-
               <Button type="submit" variant="primary">
                 Add
               </Button>
@@ -139,7 +134,6 @@ function SalesScreen() {
           </Container>
         </Paper>
       </Modal>
-
       {sales.map((sale) => (
         <SalesComponent sales={sale}></SalesComponent>
       ))}
